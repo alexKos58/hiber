@@ -1,10 +1,10 @@
-package ru.kostyushin.hiber;
+package ru.kostyushin.hibernate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HiberApplicationTests {
+class HibernateApplicationTests {
 
     @Test
     void contextLoads() {

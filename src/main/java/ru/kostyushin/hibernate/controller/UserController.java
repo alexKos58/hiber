@@ -1,12 +1,12 @@
-package rest;
+package ru.kostyushin.hibernate.controller;
 
-import entity.User;
+import ru.kostyushin.hibernate.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import service.UserService;
+import ru.kostyushin.hibernate.service.UserService;
 
 import java.util.List;
 

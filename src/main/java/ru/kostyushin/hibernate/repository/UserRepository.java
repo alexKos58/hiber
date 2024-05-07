@@ -1,6 +1,6 @@
-package repo;
+package ru.kostyushin.hibernate.repository;
 
-import entity.User;
+import ru.kostyushin.hibernate.entity.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -13,7 +13,7 @@ public class UserRepository {
     private EntityManager manager;
 
     public List<User> getPersonsByCity(String city) {
-        return manager.createQuery("SELECT u FROM User u WHERE u.city_of_living = :city")
+        return manager.createQuery("SELECT u FROM User u WHERE u.cityOfLiving = :city")
                 .setParameter("city",city).getResultList();
     }
 }

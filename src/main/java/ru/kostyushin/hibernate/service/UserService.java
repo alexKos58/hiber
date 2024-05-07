@@ -1,17 +1,15 @@
-package service;
+package ru.kostyushin.hibernate.service;
 
-import entity.User;
+import ru.kostyushin.hibernate.entity.User;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repo.UserRepository;
+import ru.kostyushin.hibernate.repository.UserRepository;
 
 import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class UserService {
-    @Autowired
     private UserRepository userRepository;
 
     public List<User> getPersonsByCity(String city) {
