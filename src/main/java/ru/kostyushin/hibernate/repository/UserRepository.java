@@ -1,19 +1,18 @@
 package ru.kostyushin.hibernate.repository;
 
-import ru.kostyushin.hibernate.entity.User;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import ru.kostyushin.hibernate.entity.User;
+import ru.kostyushin.hibernate.entity.UserId;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-public class UserRepository {
-    @PersistenceContext
-    private EntityManager manager;
+public interface UserRepository extends JpaRepository<User, UserId> {
+    List<User> findByCity(String city);
 
-    public List<User> getPersonsByCity(String city) {
-        return manager.createQuery("SELECT u FROM User u WHERE u.cityOfLiving = :city")
-                .setParameter("city",city).getResultList();
-    }
+    List<User> findByAgeLessThanOrderByAge(int age);
+
+    Optional<User> findByNameAndSurname(String name, String surname);
 }
